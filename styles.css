@@ -1,0 +1,26 @@
+.card {
+    width: 150px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.sunny {
+    background: rgb(255,244,0);
+    background: linear-gradient(180deg, rgba(255,244,0,1) 0%, rgba(255,0,0,1) 68%, rgba(93,0,0,1) 100%);
+}
+
+.rain {
+    background: rgb(4,0,255);
+    background: linear-gradient(188deg, rgba(4,0,255,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.cloudy {
+    background: rgb(0,255,244);
+    background: linear-gradient(184deg, rgba(0,255,244,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.containerX {
+    height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(7deg, rgba(2,0,36,1) 0%, rgba(16,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
