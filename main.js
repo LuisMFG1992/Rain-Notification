@@ -15,3 +15,4 @@ fetch(url)
 // ** 2. Buscar otra API o ver si lo hago solo con 1 dia 
 // ** 3. Tomar el dato del input y usarlo para buscar en la URL al presionar el boton
 // ** 4. Pq no puedo usar los iconos de FontAwesome? Quiero poner un telescopio en el boton de busqueda
+// ** 5. Pq salen esos errores en consola al usar liveServer?
