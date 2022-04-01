@@ -1,5 +1,5 @@
 .card {
-    width: 150px;
+    width: 250px;
     height: 300px;
     overflow: hidden;
 }
@@ -23,4 +23,12 @@
     height: 100vh;
     background: rgb(2,0,36);
     background: linear-gradient(7deg, rgba(2,0,36,1) 0%, rgba(16,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.h7 {
+    font-size: 0.6rem;
+}
+
+.fontSize {
+    font-size: 3rem;
 }
