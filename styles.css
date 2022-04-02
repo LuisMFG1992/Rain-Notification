@@ -32,3 +32,16 @@
 .fontSize {
     font-size: 3rem;
 }
+
+.fontWeight {
+    font-weight: bold;
+}
+
+.bg-img {
+    background-image: url(https://images.theconversation.com/files/232705/original/file-20180820-30593-1nxanpj.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop);
+    background-size: cover;
+}
+
+input { 
+    text-align: center; 
+}
