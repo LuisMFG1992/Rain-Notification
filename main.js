@@ -5,6 +5,25 @@ let cardDate = document.getElementById("date")
 let cardDescription = document.getElementById("description")
 let cardCityTemp = document.getElementById("cityTemp")
 
+let apiKey = "2c0d8f240926bd0d30e9d247ad69ffdb"
+let lat
+let long
+
+window.addEventListener("load", () => {
+    const location = navigator.geolocation.getCurrentPosition(locationOk)
+})
+
+const locationOk = (pos) => { 
+    lat = pos.coords.latitude
+    long = pos.coords.latitude
+    console.log(`Estas en: ${lat} y ${long}`)
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`
+
+}
+
+
+
+
 
 searchBar.addEventListener("keypress", (evt) => { 
     if (evt.code == "Enter") {
@@ -22,7 +41,7 @@ searchButton.addEventListener("click", () => {
 const getData = async (city) => {
     try{
         
-        let apiKey = "2c0d8f240926bd0d30e9d247ad69ffdb"
+        // let apiKey = "2c0d8f240926bd0d30e9d247ad69ffdb"
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
         const respuesta = await fetch(url)
         const respuestaJSON = await respuesta.json()
