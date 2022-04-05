@@ -106,5 +106,3 @@ const getData = async (city) => {
     console.log("ERROR", err);
   }
 };
-
-console.log("PRUEBA");
