@@ -4,6 +4,7 @@ let cardCityName = document.getElementById("cityName");
 let cardDate = document.getElementById("date");
 let cardDescription = document.getElementById("description");
 let cardCityTemp = document.getElementById("cityTemp");
+let cardCountryName = document.getElementById("countryName");
 
 let apiKey = "2c0d8f240926bd0d30e9d247ad69ffdb";
 let lat;
@@ -37,12 +38,13 @@ const getDataOnLoad = async (lat, long) => {
       cardDate.innerText = `Updated: ${currentDay} - ${currentTime} hs`;
 
       // TODO: OPTIMIZAR = AL ESTAR AMBOS FETCH CON AWAIT EL PRIMERO FRENA LA PETICION DEL OTRO. NO ES PRACTICO.
-      // ** UTILIZAR LA PROPIEDAD DE COUNTRY PARA DECIR DE QUE PAIS ES LA CIUDAD QUE ESTAMOS BUSCANDO
 
       const url2 = `https://api.openweathermap.org/data/2.5/weather?q=${actualCity}&appid=${apiKey}&units=metric`;
       const respuesta2 = await fetch(url2);
       const respuestaJSON2 = await respuesta2.json();
-      console.log("respuestaJSON", respuestaJSON2);
+
+      let country = respuestaJSON2.sys.country;
+      cardCountryName.innerText = `Country: ${country}`;
 
       let status = respuestaJSON2.weather[0].description;
       let statusToUpperCase = status[0].toUpperCase() + status.substring(1);
@@ -72,13 +74,13 @@ searchButton.addEventListener("click", () => {
 
 const getData = async (city) => {
   try {
-    // let apiKey = "2c0d8f240926bd0d30e9d247ad69ffdb"
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     const respuesta = await fetch(url);
     const respuestaJSON = await respuesta.json();
 
     if (respuesta.ok) {
-      console.log(respuestaJSON);
+      let country = respuestaJSON.sys.country;
+      cardCountryName.innerText = `Country: ${country}`;
 
       let cityName = respuestaJSON.name;
       let cityUpperCase = cityName[0].toUpperCase() + cityName.substring(1);
